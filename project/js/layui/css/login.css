@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: url('../')
+    url('../img/1.png');
+    display:norepeat center;
+    /* background: src="../images/background.jpg"; */
+}

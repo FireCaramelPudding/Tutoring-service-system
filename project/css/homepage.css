@@ -1,0 +1,11 @@
+#body1 {
+    display: block;
+}
+
+#body2 {
+    display: none;
+}
+
+.layui-panel {
+    background-color: white;
+}
