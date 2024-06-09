@@ -30,17 +30,21 @@ routeReg.get("/", (req, res) => {
   console.log("homepage");
   //res.sendFile('../index.html')
 
-  readFile("../index.html", function (err, data) {
-    if (err) {
-      res.writeHead(404, { "Content-Type": "text/html" });
-      res.end("读取文件失败");
-    } else {
-      console.log("send homepage");
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.write(data.toString());
-      res.end();
+  fs.readFile(
+    "E:/软件工程/项目实践/project/project/index.html",
+    function (err, data) {
+      if (err) {
+        res.writeHead(404, { "Content-Type": "text/html" });
+        res.end("读取文件失败");
+        console.log("读取文件失败");
+      } else {
+        console.log("send homepage");
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.write(data.toString());
+        res.end();
+      }
     }
-  });
+  );
 });
 
 routeReg.post("/api/login", (req, res) => {

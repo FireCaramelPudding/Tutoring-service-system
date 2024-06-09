@@ -14,9 +14,9 @@ app.use(
     saveUninitialized: true,
   })
 );
-app.use(express.static("../../project/"));
+app.use(express.static("../../project/project"));
 app.use(userroute);
 
-app.listen(3000, () => {
+app.listen(80, () => {
   console.log("express server running at http://127.0.0.1");
 });
