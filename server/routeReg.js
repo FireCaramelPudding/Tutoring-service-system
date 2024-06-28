@@ -97,7 +97,7 @@ routeReg.post('/api/login', (req, res) => {
                     const hash2 = Sha256Encrypt(hash1 + body.auth)
                     console.log('server hash2 is ',hash2)
                     // return res.send({ status: 1, message: '用户名被占用，请更换其他用户名！' })
-                    if (hash2 == body.hash2) {
+                    if (hash2 === body.hash2) {
                         req.session.user = body        //将用户信息存储到Session中
                         req.session.islogin = true     //将用户的登录状态，存储到Session中
                         const ciphertext = encryptDecrypt(body.auth,hash1,true)
@@ -219,7 +219,7 @@ routeReg.post('/api/change', (req, res) => {
                     const hash2 = Sha256Encrypt(hash1 + body.auth)
                     console.log('server hash2 is ',hash2)
                     // return res.send({ status: 1, message: '用户名被占用，请更换其他用户名！' })
-                    if (hash2 == body.hash2) {
+                    if (hash2 === body.hash2) {
                         req.session.user = body        //将用户信息存储到Session中
                         req.session.islogin = true     //将用户的登录状态，存储到Session中
                         console.log('will insert user newpassword')
@@ -292,8 +292,8 @@ routeReg.post('/api/students', (req, res) => {
                 if (results.length > 0) {
                     for(let i = 0; i < results.length; i++)
                         {
-                            if(body.subject==results[i].subject && body.grade==results[i].grade && body.name==results[i].name
-                                && body.phone==results[i].phone && body.date==results[i].date)
+                            if(body.subject===results[i].subject && body.grade===results[i].grade && body.name===results[i].name
+                                && body.phone===results[i].phone && body.date===results[i].date)
                                 {
                                     res.write("msg:信息重复！")        
                                     res.end()
@@ -374,8 +374,8 @@ routeReg.post('/api/teachers', (req, res) => {
                 if (results.length > 0) {
                     for(i=0;i++;results[i]!=null)
                         {
-                            if(body.subject==results[i].subject && body.grade==results[i].grade && body.name==results[i].name
-                                && body.phone==results[i].phone && body.date==results[i].date)
+                            if(body.subject===results[i].subject && body.grade===results[i].grade && body.name===results[i].name
+                                && body.phone===results[i].phone && body.date===results[i].date)
                                 {
                                     res.write("msg:信息重复！")        
                                     res.end()
@@ -494,7 +494,7 @@ routeReg.post('/api/s_getData', (req, res) => {
                                     // 从映射中提取唯一的教师对象数组
                                     const uniqueResults = Array.from(uniqueMap.values());
                                     //console.log(uniqueResults);
-                                    if(uniqueResults.length==0){
+                                    if(uniqueResults.length===0){
                                         res.send("msg:无推荐")
                                         res.end();
                                         return;
@@ -593,7 +593,7 @@ routeReg.post('/api/t_getData', (req, res) => {
                                     // 从映射中提取唯一的学生对象数组
                                     const uniqueResults = Array.from(uniqueMap.values());
                                     //console.log(uniqueResults);
-                                    if(uniqueResults.length==0){
+                                    if(uniqueResults.length===0){
                                         res.send("msg:无推荐");
                                         res.end();
                                         return;
