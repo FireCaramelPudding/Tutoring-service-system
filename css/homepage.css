@@ -1,0 +1,14 @@
+#body1 {
+    display: block;
+}
+
+#body2 {
+    display: none;
+}
+
+.layui-panel {
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid #ccc; /* 添加边框 */
+    margin-bottom: 20px; /* 确保边框之间不会有间隙 */
+}
