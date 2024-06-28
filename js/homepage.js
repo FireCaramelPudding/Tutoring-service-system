@@ -26,7 +26,7 @@ $(function() {
             date:$('#form_students [name=date]').val(),introduction:$('#form_students [name=jianjie]').val()}
        
         $.ajax({
-            url:"http://127.0.0.1/api/students",
+            url:"http://127.0.0.1:3380/api/students",
             type:"POST",
             data:{username,subject:$('#form_students [name=xueke]').val(),grade:$('#form_students [name=nianji]').val(),
                 name:$('#form_students [name=xingming]').val(),phone:$('#form_students [name=phone]').val(),
@@ -66,7 +66,7 @@ $(function() {
             date:$('#form_teachers [name=date]').val(),introduction:$('#form_teachers [name=jianjie]').val()}
        
         $.ajax({
-            url:"http://127.0.0.1/api/teachers",
+            url:"http://127.0.0.1:3380/api/teachers",
             type:"POST",
             data:{username,subject:$('#form_teachers [name=xueke]').val(),grade:$('#form_teachers [name=nianji]').val(),
                 name:$('#form_teachers [name=xingming]').val(),phone:$('#form_teachers [name=phone]').val(),
@@ -97,7 +97,7 @@ function fetchData_s() {
     const username = localStorage.getItem('username');
     // 使用jQuery的Ajax方法从后端获取数据
     $.ajax({
-        url: "http://127.0.0.1/api/s_getData", 
+        url: "http://127.0.0.1:3380/api/s_getData",
         type: "POST",
         data:{username:username},
         //dataType: "json", // 期望从服务器返回的数据类型
@@ -121,7 +121,7 @@ function fetchData_t() {
     const username = localStorage.getItem('username');
     // 使用jQuery的Ajax方法从后端获取数据
     $.ajax({
-        url: "http://127.0.0.1/api/t_getData", 
+        url: "http://127.0.0.1:3380/api/t_getData",
         type: "POST",
         data:{username:username},
         //dataType: "json", // 期望从服务器返回的数据类型
@@ -260,7 +260,7 @@ $('#form_comment').on('submit',function(e){
     console.log(data)
    
     $.ajax({
-        url:"http://127.0.0.1/api/comment",
+        url:"http://127.0.0.1:3380/api/comment",
         type:"POST",
         data:{username:t_username,teachername:teachername,studentname:username,comment:$('#form_comment [name=liuyan]').val()},
         success: function (data) {
@@ -293,7 +293,7 @@ function fetchComment() {
     const username = localStorage.getItem('t_username');
     const teachername = localStorage.getItem('name');
     $.ajax({
-        url: "http://127.0.0.1/api/getComment/", // 替换为实际的后端API地址
+        url: "http://127.0.0.1:3380/api/getComment/", // 替换为实际的后端API地址
         type: "GET",
         data: {username:username,
                teachername:teachername
@@ -357,7 +357,7 @@ $('#students_search').on('submit',function(e){
     }
     
     $.ajax({
-        url:"http://127.0.0.1/api/s_search",
+        url:"http://127.0.0.1:3380/api/s_search",
         type:"POST",
         data:data,
         success: function (data) {
@@ -396,7 +396,7 @@ $('#teachers_search').on('submit',function(e){
     }
     
     $.ajax({
-        url:"http://127.0.0.1/api/t_search",
+        url:"http://127.0.0.1:3380/api/t_search",
         type:"POST",
         data:data,
         success: function (data) {

@@ -10,7 +10,7 @@ function deletePost(name,subject,grade,date,introduction,phone,type)
     console.log("电话是:", phone);
     console.log("类型是:", type);
     $.ajax({
-        url: `http://127.0.0.1/api/delete-post`,
+        url: `http://127.0.0.1:3380/api/delete-post`,
         type: "POST",
         dataType: "json",
         data: {

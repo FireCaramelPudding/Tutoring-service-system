@@ -57,7 +57,7 @@ $(function() {
         console.log('password is  ',$('#form_reg [name=password]').val())
         //$.post('http://ajax.frontend.itheima.net/api/reguser',data,function(res){
         $.ajax({
-            url:"http://127.0.0.1/api/reguser",
+            url:"http://127.0.0.1:3380/api/reguser",
             type:"POST",
             data:{username:$('#form_reg [name=username]').val(),password:$('#form_reg [name=password]').val()},
             success: function (data) {
@@ -102,7 +102,7 @@ $(function() {
         console.log('username is  ',$('#form_login [name=username]').val())
         console.log('password is  ',$('#form_login [name=password]').val())
         $.ajax({
-            url:'http://127.0.0.1/api/login',
+            url:'http://127.0.0.1:3380/api/login',
             method: 'POST',
             data:{username:$('#form_login [name=username]').val(),password:$('#form_login [name=password]').val(),auth,hash2},
             //dataType: 'json',
@@ -162,7 +162,7 @@ $(function() {
         console.log('username is  ',$('#form_ch [name=username]').val())
         console.log('password is  ',$('#form_ch [name=password]').val())
         $.ajax({
-            url:'http://127.0.0.1/api/change',
+            url:'http://127.0.0.1:3380/api/change',
             method: 'POST',
             data:{username:$('#form_ch [name=username]').val(),oldpassword:$('#form_ch [name=oldpassword]').val(),newpassword:$('#form_ch [name=newpassword]').val(),auth,hash2},
             //dataType: 'json',

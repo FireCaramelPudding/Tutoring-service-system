@@ -21,7 +21,7 @@ $(function() {
         console.log(`Sending request for username: ${username}`);
         $.ajax({
             // url: `http://127.0.0.1/api/my-posts?username=${username}`, // 包含用户名的URL
-            url: `http://127.0.0.1/api/my-posts`,
+            url: `http://127.0.0.1:3380/api/my-posts`,
             type: "GET",
             dataType: "json", // 期望从服务器返回的数据类型
             data:{username:username},

@@ -19,8 +19,8 @@ routeReg.use(session({
   var connection = mysql.createConnection({
     host:'127.0.0.1',
     user:'root',
-    password:'123456',
-    database:'mydatabase',
+    password:'20021210',
+    database:'software',
     port:3306
 });
 

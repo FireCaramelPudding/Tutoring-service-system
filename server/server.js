@@ -16,6 +16,6 @@ app.use(express.static('../../project/'))
 app.use(userroute)
 
 
-app.listen(80, () => {
-  console.log('express server running at http://127.0.0.1')
+app.listen(3380, () => {
+  console.log('express server running at http://127.0.0.1:3380')
 })
